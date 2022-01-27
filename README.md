@@ -1,2 +1,2 @@
-# Exercicios-Fun-es-Simples-Js
+# Exercicios-Funcoes-Simples-Js
 Funções simples de JavaScript
