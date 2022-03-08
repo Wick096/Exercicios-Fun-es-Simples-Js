@@ -1,0 +1,31 @@
+const http = require('http')
+
+const getTurma = letra =>{
+    const url = `http://file.cod3r.com.br/curso-js/turma${letra}`
+    return new Promisse ((resolve,reject))=>{
+        http.get(url,res=>{
+            let resultado = ''
+            res.on('data',dados =>{
+                resultadot +=dados
+            })
+            res.on('end',)=>{
+                try{
+                    resolve.(JSON.parse(resultado))
+                } catch(e){
+                    reject(e)
+                }
+            })
+        })
+    })
+}
+
+let obterAlunos = async()=>{
+    const turmaA = await getTurma('A')
+    const turmaB = await getTurma('B')
+    const turmaC = await getTurma('C')
+    return[].concat(turmaA,turmaB,turmaC)
+    
+    obterAlunos()
+    .then(alunos=>.map(a=>a.nome))
+    .then(nomes=>console.log(nomes))
+}
